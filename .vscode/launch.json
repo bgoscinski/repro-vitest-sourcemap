@@ -5,14 +5,24 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "Debug",
+			"name": "Debug - vitest",
 			"autoAttachChildProcesses": true,
 			"skipFiles": ["<node_internals>/**"],
 			"program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
 			"env": {
 				"VITEST_MIN_THREADS": "1",
-				"VITEST_MAX_THREADS": "1"
+				"VITEST_MAX_THREADS": "1",
+				"VITE_NODE_DEBUG_DUMP": "1"
 			},
+			"args": ["run"]
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Debug - node",
+			"autoAttachChildProcesses": true,
+			"skipFiles": ["<node_internals>/**"],
+			"program": "test/the.test.js",
 			"args": ["run"]
 		}
 	]
